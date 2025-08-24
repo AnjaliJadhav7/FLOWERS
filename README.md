@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flower Apologizing Page 🌸</title>
+  <title>Flower Greeting Card</title>
   <style>
     body {
       margin: 0;
@@ -12,55 +10,44 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
-      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, #ca6bfa, #ee9ca7);
       overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
     }
-
     h1 {
-      font-size: 2.5rem;
       color: white;
-      text-shadow: 2px 2px 6px #000;
-      margin-bottom: 20px;
+      font-size: 2em;
+      text-shadow: 2px 2px 6px black;
+      position: relative;
+      z-index: 10;
+      text-align: center;
     }
-
-    p {
-      font-size: 1.5rem;
-      color: #fff;
-      text-shadow: 1px 1px 5px #000;
-    }
-
-    /* Floating flowers */
     .flower {
       position: absolute;
-      font-size: 1.5rem;
-      animation: float 10s linear infinite;
+      font-size: 1em;
+      animation: fall linear infinite;
     }
-
-    @keyframes float {
-      from { transform: translateY(100vh); opacity: 1; }
-      to { transform: translateY(-10vh); opacity: 0.8; }
+    @keyframes fall {
+      from { transform: translateY(-10vh) rotate(0deg); }
+      to { transform: translateY(110vh) rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>🪻 Flower Apologizing Page 🌸</h1>
-    <p>🌷 Sorry for not giving the chapter earlier, my flowers 🌺</p>
-  </div>
+  <h1>🪻 FLOWER APOLOGIZING PAGE🌼<br> 🌷Sorry for not giving the chapter earlier, my flowers 🌸.</h1>
 
   <script>
-    const emojis = ["🌹","🌷","🌸","🌼","💮","🌻","🌺"];
-    for (let i = 0; i < 30; i++) {
-      let flower = document.createElement("div");
-      flower.className = "flower";
-      flower.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.innerHTML = ["🌸","🌺","🌻","🌹","🌷"][Math.floor(Math.random()*5)];
       flower.style.left = Math.random() * 100 + "vw";
-      flower.style.animationDuration = (Math.random() * 5 + 5) + "s";
-      flower.style.fontSize = (Math.random() * 20 + 20) + "px";
+      flower.style.animationDuration = (Math.random() * 3 + 3) + "s";
       document.body.appendChild(flower);
+
+      setTimeout(() => { flower.remove(); }, 6000);
     }
+    setInterval(createFlower, 300);
   </script>
 </body>
 </html>
