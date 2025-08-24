@@ -46,7 +46,7 @@
 </head>
 <body>
   <div>
-    <h1>💐 Flower Apologizing Page 🌸</h1>
+    <h1>🪻 Flower Apologizing Page 🌸</h1>
     <p>🌷 Sorry for not giving the chapter earlier, my flowers 🌺</p>
   </div>
 
